@@ -431,3 +431,41 @@ drwxr-x--- 18 eddi_knapp eddi_knapp   4096 Dec  1 19:15 ..
 drwxrwxr-x  2 eddi_knapp eddi_knapp   4096 Dec  1 08:25 dir
 -rw-------  1 eddi_knapp eddi_knapp 419589 Dec  1 08:32 dir.tar.gz.gpg
 ```
+
+Donc : 
+```bash
+root@tbfc-web01:/home/eddi_knapp/.secret$ cd dir
+root@tbfc-web01:/home/eddi_knapp/.secret/dir$ ls -la
+total 420
+drwxrwxr-x 2 eddi_knapp eddi_knapp   4096 Dec  1 08:25 .
+drwxrwxr-x 3 eddi_knapp eddi_knapp   4096 Dec  1 20:02 ..
+-rw-r--r-- 1 eddi_knapp eddi_knapp 420812 Nov 30 18:18 sq1.png
+root@tbfc-web01:/home/eddi_knapp/.secret/dir$ 
+```
+
+Maintenant : 
+```bash
+root@tbfc-web01:/home/eddi_knapp/.secret/dir$ # 1. Pour l'utilisateur 'mcskidy'
+mkdir -p /home/mcskidy/Desktop
+cp /home/eddi_knapp/.secret/dir/sq1.png /home/mcskidy/Desktop/sq1.png
+chmod 777 /home/mcskidy/Desktop/sq1.png
+
+# 2. Pour l'utilisateur 'eddi_knapp' (On sait qu'il a un Desktop)
+mkdir -p /home/eddi_knapp/Desktop
+cp /home/eddi_knapp/.secret/dir/sq1.png /home/eddi_knapp/Desktop/sq1.png
+chmod 777 /home/eddi_knapp/Desktop/sq1.png
+
+# 3. Pour l'utilisateur 'ubuntu' (au cas où)
+mkdir -p /home/ubuntu/Desktop
+cp /home/eddi_knapp/.secret/dir/sq1.png /home/ubuntu/Desktop/sq1.png
+chmod 777 /home/ubuntu/Desktop/sq1.png
+
+echo "C'est fait ! L'image est maintenant sur le bureau de tout le monde."
+C'est fait ! L'image est maintenant sur le bureau de tout le monde.
+root@tbfc-web01:/home/eddi_knapp/.secret/dir$
+```
+
+L'image en question : 
+
+<img width="629" height="833" alt="image" src="https://github.com/user-attachments/assets/ba05bdad-2e66-4688-bc08-0c25ee184f31" />
+
