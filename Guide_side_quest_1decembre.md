@@ -392,9 +392,6 @@ chmod 777 /home/eddi_knapp/Desktop/sq1.png
 mkdir -p /home/ubuntu/Desktop
 cp /home/eddi_knapp/.secret/dir/sq1.png /home/ubuntu/Desktop/sq1.png
 chmod 777 /home/ubuntu/Desktop/sq1.png
-
-echo "C'est fait ! L'image est maintenant sur le bureau de tout le monde."
-C'est fait ! L'image est maintenant sur le bureau de tout le monde.
 root@tbfc-web01:/home/eddi_knapp/.secret/dir$
 ```
 
