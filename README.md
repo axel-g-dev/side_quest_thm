@@ -368,7 +368,7 @@ mcskidy@tbfc-web01:~$
 On obtient cela : **Take this flag THM{w3lcome_2_A0c_2025}**
 
 
-Apres : 
+Après : 
 
 ```bash
 mcskidy@tbfc-web01:~$ sudo su
