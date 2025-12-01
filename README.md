@@ -367,3 +367,53 @@ mcskidy@tbfc-web01:~$
 
 On obtient cela : **Take this flag THM{w3lcome_2_A0c_2025}**
 
+
+Apres : 
+
+```bash
+mcskidy@tbfc-web01:~$ sudo su
+root@tbfc-web01:/home/mcskidy$ cd ..
+root@tbfc-web01:/home$ ls
+eddi_knapp  mcskidy  socmas  ubuntu
+root@tbfc-web01:/home$ cd eddi_knapp/
+root@tbfc-web01:/home/eddi_knapp$ ls -la
+total 120
+drwxr-x--- 18 eddi_knapp eddi_knapp 4096 Dec  1 19:15 .
+drwxr-xr-x  6 root       root       4096 Oct 10 17:27 ..
+-rw-r--r--  1 eddi_knapp eddi_knapp  220 Feb 25  2020 .bash_logout
+-rw-r--r--  1 eddi_knapp eddi_knapp 3797 Nov 11 16:24 .bashrc
+-rw-r--r--  1 eddi_knapp eddi_knapp 3797 Nov 11 16:19 .bashrc.bak
+drwxrwxr-x  3 eddi_knapp eddi_knapp 4096 Nov 30 18:18 .cache
+drwx------  2 eddi_knapp eddi_knapp 4096 Oct  9 16:50 .config
+drwx------  3 eddi_knapp eddi_knapp 4096 Dec  1 08:32 .gnupg
+-rw-------  1 eddi_knapp eddi_knapp   68 Oct 10 18:16 .image_meta
+-rw-------  1 eddi_knapp eddi_knapp   20 Dec  1 19:15 .lesshst
+drwxrwxr-x  4 eddi_knapp eddi_knapp 4096 Nov 30 18:18 .local
+-rw-------  1 eddi_knapp eddi_knapp   19 Nov 11 16:30 .pam_environment
+-rw-------  1 eddi_knapp eddi_knapp   19 Nov 11 16:24 .pam_environment.bak
+-rw-r--r--  1 eddi_knapp eddi_knapp  833 Nov 11 16:30 .profile
+-rw-r--r--  1 eddi_knapp eddi_knapp  833 Nov 11 16:24 .profile.bak
+drwxrwxr-x  2 eddi_knapp eddi_knapp 4096 Dec  1 08:32 .secret
+drwx------  3 eddi_knapp eddi_knapp 4096 Nov 11 12:07 .secret_git
+drwx------  3 eddi_knapp eddi_knapp 4096 Oct  9 17:20 .secret_git.bak
+-rw-------  1 eddi_knapp eddi_knapp 7167 Nov 11 16:23 .viminfo
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct 10 18:15 Desktop
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Nov 14 19:31 Documents
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct 10 18:15 Downloads
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct  9 16:50 Music
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct 10 18:16 Pictures
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct  9 16:50 Public
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct  9 16:50 Templates
+drwxr-xr-x  2 eddi_knapp eddi_knapp 4096 Oct  9 16:50 Videos
+drwxrwxr-x  2 eddi_knapp eddi_knapp 4096 Nov 11 16:24 fix_passfrag_backups_20251111162432
+-rw-rw-r--  1 eddi_knapp eddi_knapp  429 Oct  9 17:53 wget-log
+root@tbfc-web01:/home/eddi_knapp$ cat .secret
+cat: .secret: Is a directory
+root@tbfc-web01:/home/eddi_knapp$ cd .secret
+ls -la
+total 420
+drwxrwxr-x  2 eddi_knapp eddi_knapp   4096 Dec  1 08:32 .
+drwxr-x--- 18 eddi_knapp eddi_knapp   4096 Dec  1 19:15 ..
+-rw-------  1 eddi_knapp eddi_knapp 419589 Dec  1 08:32 dir.tar.gz.gpg
+```
+
