@@ -417,3 +417,17 @@ drwxr-x--- 18 eddi_knapp eddi_knapp   4096 Dec  1 19:15 ..
 -rw-------  1 eddi_knapp eddi_knapp 419589 Dec  1 08:32 dir.tar.gz.gpg
 ```
 
+Puis 
+```bash
+root@tbfc-web01:/home/eddi_knapp/.secret$ gpg --decrypt dir.tar.gz.gpg | tar xz
+gpg: directory '/root/.gnupg' created
+gpg: keybox '/root/.gnupg/pubring.kbx' created
+gpg: AES256.CFB encrypted data
+gpg: encrypted with 1 passphrase
+root@tbfc-web01:/home/eddi_knapp/.secret$ ls -la # Ici il faut rentre le flag trouvé plus haut : THM{w3lcome_2_A0c_2025}
+total 424
+drwxrwxr-x  3 eddi_knapp eddi_knapp   4096 Dec  1 20:02 .
+drwxr-x--- 18 eddi_knapp eddi_knapp   4096 Dec  1 19:15 ..
+drwxrwxr-x  2 eddi_knapp eddi_knapp   4096 Dec  1 08:25 dir
+-rw-------  1 eddi_knapp eddi_knapp 419589 Dec  1 08:32 dir.tar.gz.gpg
+```
