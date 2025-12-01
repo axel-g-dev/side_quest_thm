@@ -297,7 +297,73 @@ On obtient :
 <img width="1026" height="964" alt="image" src="https://github.com/user-attachments/assets/a12d3756-e842-4804-87da-0e1e2b64a11e" />
 
 
+Gibberish message (copy and decode with your UNLOCK_KEY)
+U2FsdGVkX1/7xkS74RBSFMhpR9Pv0PZrzOVsIzd38sUGzGsDJOB9FbybAWod5HMsa+WIr5HDprvK6aFNYuOGoZ60qI7axX5Qnn1E6D+BPknRgktrZTbMqfJ7wnwCExyU8ek1RxohYBehaDyUWxSNAkARJtjVJEAOA1kEOUOah11iaPGKxrKRV0kVQKpEVnuZMbf0gv1ih421QvmGucErFhnuX+xv63drOTkYy15s9BVCUfKmjMLniusI0tqs236zv4LGbgrcOfgir+P+gWHc2TVW4CYszVXlAZUg07JlLLx1jkF85TIMjQ3B91MQS+btaH2WGWFyakmqYltz6jB5DOSCA6AMQYsqLlx53ORLxy3FfJhZTl9iwlrgEZjJZjDoXBBMdlMCOjKUZfTbt3pnlHWEaGJD7NoTgywFsIw5cz7hkmAMxAIkNn/5hGd/S7mwVp9h6GmBUYDsgHWpRxvnjh0s5kVD8TYjLzVnvaNFS4FXrQCiVIcp1ETqicXRjE4T0MYdnFD8h7og3ZlAFixM3nYpUYgKnqi2o2zJg7fEZ8c=
 
+---
 
+1. **Supprime le fichier incomplet** :
 
+```bash
+rm /tmp/website_output.txt
+```
+
+2. **Crée-le à nouveau et colle **tout** le ciphertext complet**, jusqu’au dernier caractère `=` :
+
+```bash
+cat > /tmp/website_output.txt
+```
+
+Puis **colle tout ceci** (exactement comme je te l’ai donné précédemment, jusqu’au `EZ8c=`) :
+
+```
+U2FsdGVkX1/7xkS74RBSFMhpR9Pv0PZrzOVsIzd38sUGzGsDJOB9FbybAWod5HMsa+WIr5HDprvK6aFNYuOGoZ60qI7axX5Qnn1E6D+BPknRgktrZTbMqfJ7wnwCExyU8ek1RxohYBehaDyUWxSNAkARJtjVJEAOA1kEOUOah11iaPGKxrKRV0kVQKpEVnuZMbf0gv1ih421QvmGucErFhnuX+xv63drOTkYy15s9BVCUfKmjMLniusI0tqs236zv4LGbgrcOfgir+P+gWHc2TVW4CYszVXlAZUg07JlLLx1jkF85TIMjQ3B91MQS+btaH2WGWFyakmqYltz6jB5DOSCA6AMQYsqLlx53ORLxy3FfJhZTl9iwlrgEZjJZjDoXBBMdlMCOjKUZfTbt3pnlHWEaGJD7NoTgywFsIw5cz7hkmAMxAIkNn/5hGd/S7mwVp9h6GmBUYDsgHWpRxvnjh0s5kVD8TYjLzVnvaNFS4FXrQCiVIcp1ETqicXRjE4T0MYdnFD8h7og3ZlAFixM3nYpUYgKnqi2o2zJg7fEZ8c=
+```
+
+Ensuite appuie sur **CTRL+D** (pas Ctrl+C !).
+
+---
+
+3. **Déchiffre à nouveau** :
+
+```bash
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -salt -base64 \
+  -in /tmp/website_output.txt \
+  -out /tmp/decoded_message.txt \
+  -pass pass:'91J6X7R4FQ9TQPM9JX2Q9X2Z'
+```
+
+---
+
+4. **Lis le résultat** :
+
+```bash
+cat /tmp/decoded_message.txt
+```
+
+---
+
+Et là ! que se passe-t-il ???????
+
+```bash 
+mcskidy@tbfc-web01:~$ rm /tmp/website_output.txt
+mcskidy@tbfc-web01:~$ cat > /tmp/website_output.txt
+U2FsdGVkX1/7xkS74RBSFMhpR9Pv0PZrzOVsIzd38sUGzGsDJOB9FbybAWod5HMsa+WIr5HDprvK6aFNYuOGoZ60qI7axX5Qnn1E6D+BPknRgktrZTbMqfJ7wnwCExyU8ek1RxohYBehaDyUWxSNAkARJtjVJEAOA1kEOUOah11iaPGKxrKRV0kVQKpEVnuZMbf0gv1ih421QvmGucErFhnuX+xv63drOTkYy15s9BVCUfKmjMLniusI0tqs236zv4LGbgrcOfgir+P+gWHc2TVW4CYszVXlAZUg07JlLLx1jkF85TIMjQ3B91MQS+btaH2WGWFyakmqYltz6jB5DOSCA6AMQYsqLlx53ORLxy3FfJhZTl9iwlrgEZjJZjDoXBBMdlMCOjKUZfTbt3pnlHWEaGJD7NoTgywFsIw5cz7hkmAMxAIkNn/5hGd/S7mwVp9h6GmBUYDsgHWpRxvnjh0s5kVD8TYjLzVnvaNFS4FXrQCiVIcp1ETqicXRjE4T0MYdnFD8h7og3ZlAFixM3nYpUYgKnqi2o2zJg7fEZ8c=
+mcskidy@tbfc-web01:~$ openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -salt -base64 \
+  -in /tmp/website_output.txt \
+  -out /tmp/decoded_message.txt \
+  -pass pass:'91J6X7R4FQ9TQPM9JX2Q9X2Z'
+mcskidy@tbfc-web01:~$ cat /tmp/decoded_message.txt
+Well done — the glitch is fixed. Amazing job going the extra mile and saving the site. Take this flag THM{w3lcome_2_A0c_2025}
+
+NEXT STEP:
+If you fancy something a little...spicier....use the FLAG you just obtained as the passphrase to unlock:
+/home/eddi_knapp/.secret/dir
+
+That hidden directory has been archived and encrypted with the FLAG.
+Inside it you'll find the sidequest key.
+mcskidy@tbfc-web01:~$ 
+```
+
+On obtient cela : **Take this flag THM{w3lcome_2_A0c_2025}**
 
