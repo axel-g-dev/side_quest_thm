@@ -257,6 +257,8 @@ Accéder au site via Firefox : `http://ipvm:8080`
 
 Après le rechargement de la page, le site affiche :
 
+<img width="1026" height="964" alt="image" src="https://github.com/user-attachments/assets/a12d3756-e842-4804-87da-0e1e2b64a11e" />
+
 ```
 Welcome to Wareville's Christmas Countdown 🎄
 23d 4h 30m 16s until Christmas!
